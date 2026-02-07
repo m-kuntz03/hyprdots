@@ -1,0 +1,59 @@
+{
+	"name": "noctis-high-contrast",
+	"displayName": "Noctis High Contrast",
+	"description": "A fork of the Noctis theme, with more vivid syntax colors and a slick black UI",
+	"version": "10.39.1",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"scripts": {
+		"build": "node --experimental-modules src/utils/build.mjs",
+		"release:major---": "npm run build && git add . && git commit -m 🆕11.0.0🆕 && npm version major & vsce publish && git push",
+		"release:minor": "npm run build && git add . && git commit -m 10.39.0 && npm version minor & vsce publish && git push",
+		"release:patch": "npm run build && git add . && git commit -m 10.39.1 && npm version patch & vsce publish && git push"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"noctis",
+		"black",
+		"high contrast",
+		"semantic",
+		"italic",
+		"bold"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Noctis High Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/hc.json"
+			},
+			{
+				"label": "Noctis High Contrast No Italic",
+				"uiTheme": "vs-dark",
+				"path": "./themes/hc-no-italic.json"
+			},
+			{
+				"label": "Noctis High Contrast No Italic No Bold",
+				"uiTheme": "vs-dark",
+				"path": "./themes/hc-no-italic-no-bold.json"
+			}
+		]
+	},
+	"publisher": "Kamen",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KamenKolev/noctis-hc"
+	},
+	"__metadata": {
+		"installedTimestamp": 1770466887095,
+		"targetPlatform": "undefined",
+		"size": 289376
+	}
+}
