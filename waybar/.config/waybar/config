@@ -58,6 +58,7 @@
                     "on-click-right": "mode"
                     }
     },
+    
     "battery": {
         "states": {
             "warning": 20,
@@ -69,6 +70,7 @@
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 	"on-click": "gnome-control-center"
     },
+
     "pulseaudio": {
         "scroll-step": 10, 
         "format": "{icon} {volume}%",
@@ -79,6 +81,7 @@
         "on-click": "pavucontrol",
 	"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
+
     "network": {
 	"format": "{ifname}",
 	"format-wifi": "󰖩",
@@ -89,8 +92,9 @@
 	"tooltip-format-ethernet": "{ifname}",
 	"tooltip-format-disconnected": "Disconnected",
 	"max-length": 50,
-	"on-click": "gnome-control-center"
+	"on-click": "kitty -e impala"
      },
+
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon}",
@@ -98,6 +102,7 @@
 	"tooltip-format": "{percent} %",
 	"on-click": "gnome-control-center"
     },
+
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
