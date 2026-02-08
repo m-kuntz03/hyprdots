@@ -1,0 +1,21 @@
+/*
+*
+* Custom Grayscale palette
+*
+*/
+
+@define-color background #111111;
+@define-color filling #222222;
+@define-color crust  #11111b;
+
+@define-color text #d1ffff;
+
+@define-color focus #cccccc;
+@define-color unfocus #666666;
+@define-color urgent #FF6666;
+
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color red       #f38ba8;
+@define-color maroon    #eba0ac;
+@define-color mauve     #cba6f7;

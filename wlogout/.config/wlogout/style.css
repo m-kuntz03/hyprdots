@@ -1,0 +1,30 @@
+* {
+	background-image: none;
+}
+
+@import "grayscale.css";
+
+window {
+	background-color: transparent;
+    font-size: 14pt;
+    font-weight: bold;
+}
+button {
+    color: @text;
+	background-color: @filling;
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    text-shadow: none;
+    margin: 5px;
+    padding: 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: @filling;
+}
+
+button:focus, button:active { 
+	/* background-color: @focused; */
+    border-color: @text;
+
+}
