@@ -9,6 +9,8 @@ CONFIG_FILE="$HOME/.config/hypr/monitors.conf"
 if [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "mirror" ]; then
     cp "$EXTEND_FILE" "$CONFIG_FILE"
     echo "extended" > "$STATE_FILE"
+    killall waybar
+    waybar
 else
     cp "$MIRROR_FILE" "$CONFIG_FILE"
     echo "mirror" > "$STATE_FILE"
