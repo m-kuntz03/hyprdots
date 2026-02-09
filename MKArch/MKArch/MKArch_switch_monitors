@@ -1,0 +1,15 @@
+#! /bin/bash
+
+STATE_FILE="$HOME/.config/hypr/monitor_switcher/state"
+
+EXTEND_FILE="$HOME/.config/hypr/monitor_switcher/monitors_extended.conf"
+MIRROR_FILE="$HOME/.config/hypr/monitor_switcher/monitors_mirror.conf"
+CONFIG_FILE="$HOME/.config/hypr/monitors.conf"
+
+if [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "mirror" ]; then
+    cp "$EXTEND_FILE" "$CONFIG_FILE"
+    echo "extended" > "$STATE_FILE"
+else
+    cp "$MIRROR_FILE" "$CONFIG_FILE"
+    echo "mirror" > "$STATE_FILE"
+fi
