@@ -21,8 +21,8 @@
         "width": 10,       // Width of percentage bars
         "char": {
             "elapsed": "■", // Character for elapsed portion
-            "total": "-",    // Character for total portion
-        },
+            "total": "-"    // Character for total portion
+        }
     },
     "percent": {
         "type": 2
@@ -35,22 +35,22 @@
     {
         "type": "os",
         "key": "OS",
-        "keyColor": "red",
+        "keyColor": "red"
     },
     {
         "type": "kernel",
         "key": "Kernel",
-        "keyColor": "red",
+        "keyColor": "red"
     },
     {
         "type": "host",
         "key": "Host",
-        "keyColor": "green",
+        "keyColor": "green"
     },
     {
         "type": "wm",
         "key": "WM",
-        "keyColor": "green",
+        "keyColor": "green"
     },
 /*    {
         "type": "uptime",
@@ -60,32 +60,32 @@
     {
         "type": "terminal",
         "key": "Term",
-        "keyColor": "yellow",
+        "keyColor": "yellow"
     },
     {
         "type": "packages",
         "key": "PKG",
-        "keyColor": "yellow",
+        "keyColor": "yellow"
     },
     {
         "type": "cpu",
         "key": "CPU",
-        "keyColor": "blue",
+        "keyColor": "blue"
     },
     {
         "type": "gpu",
         "key": "GPU",
-        "keyColor": "blue",
+        "keyColor": "blue"
     },
     {
         "type": "memory",
         "key": "Memory",
-        "keyColor": "magenta",
+        "keyColor": "magenta"
     },
     {
         "type": "disk",
         "key": "Disk",
-        "keyColor": "magenta",
+        "keyColor": "magenta"
     },
     "break",
     "colors"
