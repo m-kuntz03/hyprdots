@@ -5,16 +5,32 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+
+# --- ALIASES --- #
+# alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+alias q3d_gal='micromamba activate q3d_env && code ~/Documents/GALENA'
+alias q3d_pro='micromamba activate q3d_env && code ~/Documents/Projects'
+
+# Credit to OMARCHY for the following:
+alias ls='eza -lh --group-directories-first --icons=auto'
+alias lsa='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+
+# --- STARTUP --- #
 fastfetch
 
 eval "$(starship init bash)"
 
-alias q3d_gal='micromamba activate q3d_env && code ~/Documents/GALENA'
-alias q3d_pro='micromamba activate q3d_env && code ~/Documents/Projects'
+set visible-stats on
+
 
 
 # >>> mamba initialize >>>
