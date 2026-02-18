@@ -1,0 +1,52 @@
+//@theme "Arc-Dark"
+@theme "Monokai"
+
+
+
+// https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown
+
+window {
+    width: var( width, 40%);
+    height: var( height, 40%);
+    border: 2;
+    border-color: #3cccfe;
+    border-radius: 5px;
+}
+
+listview {
+    border-color: rgba ( 196, 203, 212, 50 % );
+    scrollbar:    true;
+}
+
+entry {
+    placeholder: "...";
+}
+
+
+element {
+  orientation: horizontal;
+  children: [element-icon, element-text ];
+}
+
+element-icon {
+    size: 1.5em;
+    padding: 5px;
+}
+
+element-text {
+    vertical-align: 0.65;
+    padding: 5px;
+    
+}
+
+entry, element-text, prompt {
+  text-color: white;
+  font: "MesloLG 11";
+}
+
+scrollbar {
+    width:        4px ;
+    handle-color: rgba ( 196, 203, 212, 100 % );
+    handle-width: 8px;
+    handle-rounded-corners: true;
+}

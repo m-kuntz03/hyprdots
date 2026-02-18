@@ -14,6 +14,8 @@ PS1='[\u@\h \W]\$ '
 alias q3d_gal='micromamba activate q3d_env && code ~/Documents/GALENA'
 alias q3d_pro='micromamba activate q3d_env && code ~/Documents/Projects'
 
+alias lservices='systemctl --type=service --state=running'
+
 # Credit to OMARCHY for the following:
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
