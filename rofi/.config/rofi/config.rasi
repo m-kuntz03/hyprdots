@@ -9,17 +9,19 @@ window {
     width: var( width, 40%);
     height: var( height, 40%);
     border: 2;
-    border-color: #3cccfe;
+    border-color: #70dbff;
     border-radius: 5px;
+    background-color: rgba(34, 34, 34, 0.95);
 }
 
 listview {
-    border-color: rgba ( 196, 203, 212, 50 % );
+    border-color: rgba(102, 102, 102, 0.95);
     scrollbar:    true;
 }
 
 entry {
     placeholder: "...";
+    cursor: text;
 }
 
 
@@ -30,13 +32,15 @@ element {
 
 element-icon {
     size: 1.5em;
-    padding: 5px;
 }
 
 element-text {
     vertical-align: 0.65;
+}
+
+element-icon, element-text {
     padding: 5px;
-    
+    cursor: pointer;
 }
 
 entry, element-text, prompt {
@@ -46,7 +50,7 @@ entry, element-text, prompt {
 
 scrollbar {
     width:        4px ;
-    handle-color: rgba ( 196, 203, 212, 100 % );
+    handle-color: rgba(102, 102, 102, 0.95);
     handle-width: 8px;
     handle-rounded-corners: true;
 }
