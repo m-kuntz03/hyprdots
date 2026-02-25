@@ -1,0 +1,155 @@
+{
+    "output": ["*"],
+    "layer": "top", 
+    "position": "top", 
+    "exclusive": true,
+    "passthrough": false,
+    
+    "modules-left": ["clock"], 
+    "modules-center": ["hyprland/workspaces", "custom/power"], 
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "custom/shutdown"], 
+    
+    "hyprland/workspaces": {
+         "format": "{icon}",
+         "format-icons": {
+                // "default": ""
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10"
+                // "1": "󰎤",
+                // "2": "󰎧",
+                // "3": "󰎪",
+                // "4": "󰎭",
+                // "5": "󰎱",
+                // "6": "󰎳",
+                // "7": "󰎶",
+                // "8": "󰎹",
+                // "9": "󰎼",
+                // "10": "󰽽"
+         }
+    },
+
+    "hyprland/language": {
+        "format": "{short}",
+        "tooltip-format": "{long}"
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/Berlin",
+        "format": "{:%d. %b, %H:%M }",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "left",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":     "<span color='#99ffdd'><b>{:%W}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode"
+                    }
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format": "{icon}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%",
+	"on-click": "gnome-control-center"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 10, 
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "kitty -e bluetui"
+	    // "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "kitty -e impala"
+     },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+        "tooltip-format": "{percent}%"
+        // "on-click": "gnome-control-center"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+	    "notification": "󰅸",
+            "none": "󰂜",
+            "dnd-notification": "󰪑",
+            "dnd-none": "󰪑",
+            "inhibited-notification": "󰅸",
+            "inhibited-none": "󰂜",
+            "dnd-inhibited-notification": "󰪑",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    
+    "custom/shutdown":{
+    	"tooltip": false,
+    	"format": "⏻",
+    	"on-click": "~/MKDebian/MKDebian-wlogout"
+    },
+
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    }
+
+}

@@ -4,45 +4,54 @@
     "position": "top", 
     "exclusive": true,
     "passthrough": false,
+    "spacing": 5,
     
-    "modules-left": ["clock"], 
-    "modules-center": ["hyprland/workspaces"], 
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "backlight", "custom/notification", "custom/shutdown"], 
+    "modules-left": ["custom/shutdown", "hyprland/workspaces", "hyprland/window"], 
+    "modules-center": ["clock"], 
+    "modules-right": ["tray", "pulseaudio", "bluetooth", "network", "group/hardware"], 
     
-    "hyprland/workspaces": {
-         "format": "{icon}",
-         "format-icons": {
-                // "default": ""
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-                "6": "6",
-                "7": "7",
-                "8": "8",
-                "9": "9",
-                "10": "10"
-                // "1": "󰎤",
-                // "2": "󰎧",
-                // "3": "󰎪",
-                // "4": "󰎭",
-                // "5": "󰎱",
-                // "6": "󰎳",
-                // "7": "󰎶",
-                // "8": "󰎹",
-                // "9": "󰎼",
-                // "10": "󰽽"
-         }
+    // "hyprland/workspaces": {
+    //      "format": "{icon}",
+    //     //  "format-icons": {
+    //     //     "active": "󰹞"
+    //     //  }
+    // },
+
+    "hyprland/language": {
+        "format": "{short}",
+        "tooltip-format": "{long}"
+    },
+
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "tooltip-format": "{title}",
+        "rewrite": {
+            "(.*)Firefox": "󰈹 Firefox",
+            "(.*)VSCodium": "󰈮 VSCodium",
+            "(.*)kitty": "󰄛 Kitty",
+            "(.*)Zotero": " Zotero",
+            "(.*)Microsoft Teams": "󰊻 Teams",
+            "(.*)Discord(.*)": " Discord",
+            "(.*)Document Viewer(.*)": "󰈙 Document Viewer",
+            "(.*)Image Viewer(.*)": "󰈟 Image Viewer",
+            "(.*)LocalSend(.*)": " LocalSend",
+            "(.*)Cisco Secure Client(.*)": "󱘖 Cisco Secure Client",
+            "(.*)QFitsView(.*)": " QFitsView",
+            "(.*)Mousepad(.*)": " Mousepad",
+            "(.*)Thunar": "󰉋 Thunar"
+        },
+        "max-length": 50
     },
 
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
+        "reverse-direction": true,
+        "show-passive-items": true
     },
     "clock": {
         "timezone": "Europe/Berlin",
-        "format": "{:%d. %b, %H:%M }",
+        "format": " {:%d. %b,  %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
@@ -59,41 +68,39 @@
                     },
         "actions":  {
                     "on-click-right": "mode"
-                    }
-    },
-    
-    "battery": {
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "format-charging": "󰂄",
-        "format-plugged": "󰂄",
-        "format": "{icon}",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip-format": "{capacity}%",
-	"on-click": "gnome-control-center"
+                    },
+        "cursor": false
     },
 
     "pulseaudio": {
-        "scroll-step": 10, 
+        "scroll-step": 5, 
         "format": "{icon}",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", ""]
-        },
+        }
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "max-length": 50,
         "on-click": "kitty -e bluetui"
-	    // "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
     "network": {
         "format": "{ifname}",
-        "format-wifi": "󰖩",
+        "format-wifi": "󰖩 {essid}",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
         "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-wifi": "{essid}\t({signalStrength}%)\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
+        "tooltip-format-ethernet": "{ifname}\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "kitty -e impala"
@@ -103,35 +110,49 @@
         "device": "intel_backlight",
         "format": "{icon}",
         "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-        "tooltip-format": "{percent}%",
-        // "on-click": "gnome-control-center"
-    },
-
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-	    "notification": "󰅸",
-            "none": "󰂜",
-            "dnd-notification": "󰪑",
-            "dnd-none": "󰪑",
-            "inhibited-notification": "󰅸",
-            "inhibited-none": "󰂜",
-            "dnd-inhibited-notification": "󰪑",
-            "dnd-inhibited-none": "󰪑"
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "tooltip-format": "{percent}%"
     },
     
     "custom/shutdown":{
     	"tooltip": false,
-    	"format": "⏻",
-    	"on-click": "~/MKDebian/MKDebian-wlogout"
+    	"format": "󰣇",
+    	"on-click": "~/MKArch/MKArch_wlogout"
+    },
+
+    "group/hardware": {
+		"orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 100,
+            "transition-left-to-right": false
+        },
+		"modules": [
+            "battery",
+			"cpu",
+			"memory"
+		]
+	},
+    
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{time}"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%"
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "{percentage}% 󰯍{swapPercentage}%",
+        "tooltip-format": " {used}/{total}Gb\n\n󰯍 {swapUsed}/{swapTotal}Gb"
     }
 
 }
