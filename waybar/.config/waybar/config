@@ -67,19 +67,20 @@
             "warning": 20,
             "critical": 10
         },
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰂄 {capacity}%",
-        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format": "{icon}",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%",
 	"on-click": "gnome-control-center"
     },
 
     "pulseaudio": {
         "scroll-step": 10, 
-        "format": "{icon} {volume}%",
+        "format": "{icon}",
         "format-muted": "",
         "format-icons": {
-            "default": ["", "", " "]
+            "default": ["", "", ""]
         },
         "on-click": "kitty -e bluetui"
 	    // "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -88,7 +89,7 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": "󰖩",
-        "format-ethernet": "󱎔",
+        "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
@@ -102,8 +103,8 @@
         "device": "intel_backlight",
         "format": "{icon}",
         "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-        "tooltip-format": "{percent} %",
-        "on-click": "gnome-control-center"
+        "tooltip-format": "{percent}%",
+        // "on-click": "gnome-control-center"
     },
 
     "custom/notification": {
@@ -126,14 +127,7 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/updates":{
-	"tooltip": false,
-        "format": "{} 󰚰",
-        "exec": "aptitude search '~U' | wc -l",
-        "exec-if": "test $(aptitude search '~U' | wc -l) -ne 0",
-        "interval": 3600,
-        "on-click": "kitty sudo apt update"
-    },
+    
     "custom/shutdown":{
     	"tooltip": false,
     	"format": "⏻",
