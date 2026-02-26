@@ -31,6 +31,7 @@
             "(.*)kitty": "󰄛 Kitty",
             "(.*)Zotero": " Zotero",
             "(.*)Microsoft Teams": "󰊻 Teams",
+            "(.*)Waiting for(.*)": "󰊻 Teams",
             "(.*)Discord(.*)": " Discord",
             "(.*)Document Viewer(.*)": "󰈙 Document Viewer",
             "(.*)Image Viewer(.*)": "󰈟 Image Viewer",
