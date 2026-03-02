@@ -138,8 +138,8 @@
             "warning": 20,
             "critical": 10
         },
-        "format-charging": "󰂄",
-        "format-plugged": "󰂄",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
         "format": "{icon} {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "{time}"
