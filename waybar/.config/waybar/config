@@ -75,8 +75,8 @@
 
     "pulseaudio": {
         "scroll-step": 5, 
-        "format": "{icon}",
-        "format-muted": "",
+        "format": "{icon} {volume}%",
+        "format-muted": "",
         "format-icons": {
             "default": ["", "", ""]
         }
@@ -100,8 +100,8 @@
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
         "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid}\t({signalStrength}%)\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
-        "tooltip-format-ethernet": "{ifname}\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
+        "tooltip-format-wifi": "{essid}\t({signalStrength}%)\n{ipaddr}\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
+        "tooltip-format-ethernet": "{ifname}\n{ipaddr}\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "kitty -e impala"

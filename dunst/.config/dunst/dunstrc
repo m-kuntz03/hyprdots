@@ -14,7 +14,7 @@
     gap_size = 5
     padding = 5
     horizontal_padding = 5
-    text_icon_padding = 5
+    text_icon_padding = 15
     vertical_alignment = center
 
 
@@ -166,9 +166,10 @@
 
 
 ### --- Override for Specififc Apps --- ###
-[general]
-    appname = "*"
+[teams]
+    appname = "teams-for-linux"
     urgency = normal
+    timeout = 0
 
 [Cisco]
     summary = "Cisco Secure Client"
@@ -180,6 +181,7 @@
 
 [urgency_normal]
     default_icon = dialog-information
+    timeout = 0
 
 [urgency_critical]
     background = "#362222"
