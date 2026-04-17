@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# checks if bluetooth device is enabled or not
+
+if bluetoothctl show | grep -qi "PowerState: on"; then
+    echo "true"
+else
+    echo "false"
+fi

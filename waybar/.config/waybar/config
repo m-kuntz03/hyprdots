@@ -10,12 +10,6 @@
     "modules-center": ["clock"], 
     "modules-right": ["tray", "pulseaudio", "bluetooth", "network", "group/hardware"], 
     
-    // "hyprland/workspaces": {
-    //      "format": "{icon}",
-    //     //  "format-icons": {
-    //     //     "active": "󰹞"
-    //     //  }
-    // },
 
     "hyprland/language": {
         "format": "{short}",
@@ -99,6 +93,7 @@
         "format-wifi": "󰖩 {essid}",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
+        "format-disabled": "󰀝",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid}\t({signalStrength}%)\n{ipaddr}\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
         "tooltip-format-ethernet": "{ifname}\n{ipaddr}\n\n󱦲{bandwidthUpBits} 󱦳{bandwidthDownBits}",
@@ -117,7 +112,7 @@
     "custom/shutdown":{
     	"tooltip": false,
     	"format": "󰣇",
-    	"on-click": "~/MKArch/MKArch_wlogout"
+    	"on-click": "swaync-client -t -sw"
     },
 
     "group/hardware": {
@@ -142,18 +137,21 @@
         "format-plugged": "󰂄 {capacity}%",
         "format": "{icon} {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip-format": "{time}"
+        "tooltip-format": "{time}",
+        "on-click": "kitty -e btop"
     },
 
     "cpu": {
         "interval": 10,
-        "format": " {usage}%"
+        "format": " {usage}%",
+        "on-click": "kitty -e btop"
     },
 
     "memory": {
         "interval": 10,
         "format": "{percentage}% 󰯍{swapPercentage}%",
-        "tooltip-format": " {used}/{total}Gb\n\n󰯍 {swapUsed}/{swapTotal}Gb"
+        "tooltip-format": " {used}/{total}Gb\n\n󰯍 {swapUsed}/{swapTotal}Gb",
+        "on-click": "kitty -e btop"
     }
 
 }

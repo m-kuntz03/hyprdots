@@ -1,0 +1,360 @@
+@import "grayscale.css";
+
+/* COLORS ---------------------------------------------------- */
+@define-color border_hypr           #70dbff;
+@define-color text_col              #8fbcbb;
+@define-color text_col_dark         #678887;
+
+
+/* NOTIFICATIONS */
+@define-color nf_background         #222222;
+@define-color nf_border             #ABE9B3;
+@define-color nf_background_crit    #362222;
+@define-color nf_border_crit        #ff0000;
+
+@define-color nf_close_button_bg    #111111;
+@define-color nf_close_button_fg    #e0e3e3;
+
+@define-color nf_action_button_bg   #1a1a1a;
+
+
+/* CONTROL CENTER */
+@define-color cc_background         #111111;
+@define-color cc_border             #666666;
+@define-color cc_widget_bkg         #222222;
+
+@define-color cc_slider_fg          #e0e3e3;
+@define-color cc_slider_bg          #111111;
+@define-color cc_slider_active      #ffb689;
+
+@define-color cc_button_bg          #2f7a82;
+
+@define-color cc_progbar_fg         #e0e3e3;
+@define-color cc_progbar_bg         #111111;
+
+
+* {
+    all: unset;
+
+    color: @text_col;
+    font-size: 14px;
+    font-family: "MesloLGM Nerd Font Propo";
+    transition: 0ms;
+}
+
+/* Avoid 'annoying' backgroud */
+.blank-window {  
+  background: transparent;  
+}
+
+/* NOTIFICATIONS ---------------------------------------------------- */
+
+.notification {
+    margin: 10px 0px 0px 0px;
+    border-radius: 15px;
+    border: 1px solid @nf_border;
+    background: @nf_background;
+    min-height: 50px;
+    padding: 10px;
+}
+
+.critical {
+    background: @nf_background_crit;
+    border: 2px solid @nf_border_crit;
+}
+
+.notification-content {
+    border-radius: 15px;
+    padding: 0px 0px 5px 0px;
+}
+
+.notification-content image {
+    padding-right: 10px;
+}
+
+.summary {
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.time {
+    color: @text_col_dark;
+}
+
+.body {
+    font-weight: normal;
+}
+
+.notification-action {
+    background: @nf_action_button_bg;
+    border-radius: 50px;
+    padding: 5px 3px;
+    margin: 0 30px;
+}
+
+.close-button {
+    background: @nf_close_button_bg;
+    color: @nf_close_button_fg;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 100%;
+    margin-top: 15px;
+    margin-right: 5px;
+    box-shadow: none;
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.notification-group {
+    background: transparent;
+    border: transparent;
+    margin: 2px 8px;
+}
+
+.notification-group-headers {
+    font-weight: bold;
+}
+
+
+/* CONTROL CENTER ---------------------------------------------------- */
+
+.control-center {
+    background: @cc_background;
+    border-radius: 5px;
+    border: 1px solid @cc_border; 
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
+    padding: 5px;
+}
+
+
+
+/* Label */
+.widget-label {
+    background: @cc_background;
+    padding: 10px 10px 0px 10px;
+}
+
+.widget-label label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* Buttons Grid */
+.widget-buttons-grid {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.widget-buttons-grid > flowbox {
+    background: @cc_widget_bkg;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild {
+    margin: 0 10px 0 0;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild:last-child {
+    margin: 0;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    padding: 0px 0px;
+    background: @cc_widget_bkg;
+    color: @text_col;
+    /* border: 1px solid alpha(@cc_border, 0.5); */
+    border-radius: 50px;
+    min-width: 85px;
+    min-height: 45px;
+    transition: all 200ms ease-in-out;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button label {
+    font-size: 20px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: alpha(@cc_background, 0.5);
+    transition: all 200ms ease-in-out;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @cc_button_bg;
+}
+
+
+/* Volume */
+.widget-volume {
+    background: @cc_widget_bkg;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.widget-volume > box > label:first-child {
+    font-size: 20px;
+}
+
+.widget-volume > box > label,
+.widget-volume > box > button label {
+    color: @text_col;
+}
+
+.widget-volume scale trough {
+    margin: 5px 20px;
+    background-color: @cc_progbar_bg;
+    min-height: 16px;
+    border-radius: 50px;
+}
+
+.widget-volume scale highlight {
+    background-color: @cc_progbar_fg;
+    border-radius: 50px;
+}
+
+.widget-volume scale slider {  
+    background-color: transparent;
+    border-radius: 50px;
+    min-height: 16px;
+    min-width: 50px;
+}
+
+.widget-volume row image {
+    background-color: transparent;
+    padding: 0px;
+    border-radius: 0px;
+    -gtk-icon-size: 20px;
+}
+
+.per-app-volume {
+    background-color: transparent;
+    margin: 15px 10px 0px 0px;
+}
+
+.per-app-volume scale trough {
+    margin: 0 22px 0 15px;
+}
+
+
+
+/* Backlight */
+.widget-backlight {
+    background: @cc_widget_bkg;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.widget-backlight > box > label:first-child {
+    font-size: 20px;
+}
+
+.widget-backlight > box > label,
+.widget-backlight > box > button label {
+    color: @text_col;
+}
+
+.widget-backlight scale trough {
+    margin: 5px 32px 5px 21px;
+    background-color: @cc_progbar_bg;
+    min-height: 16px;
+    border-radius: 50px;
+}
+
+.widget-backlight scale highlight {
+    background-color: @cc_progbar_fg;
+    border-radius: 50px;
+}
+
+.widget-backlight scale slider {  
+    background-color: transparent;
+    border-radius: 50px;
+    min-height: 16px;
+    min-width: 50px;
+}
+
+
+
+/* DO NOT DISTURB */
+.widget-dnd {
+    font-weight: bold;
+    background: @cc_widget_bkg;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.widget-dnd > switch {
+    background: @cc_slider_bg;
+    font-size: initial;
+    border-radius: 50px;
+    min-width: 50px;
+    box-shadow: none;
+    padding: 5px;
+}
+
+.widget-dnd > switch:hover {
+    background: alpha(@cc_slider_bg, 0.8);
+    transition: all 200ms ease-in-out;
+}
+
+.widget-dnd > switch:checked {
+    background: @cc_slider_active;
+    transition: all 200ms ease-in-out;
+}
+
+.widget-dnd > switch:checked:hover {
+    background: alpha(@cc_slider_active, 0.8);
+    transition: all 200ms ease-in-out;
+}
+
+.widget-dnd > switch slider {
+    background: @cc_slider_fg;
+    /* padding: 5px; */
+    border-radius: 50px;
+    transition: all 200ms ease-in-out;
+}
+
+
+
+/* TITLE */
+.widget-title {
+    background: @cc_background;
+    padding: 10px 10px 0px 10px;
+    margin-top: 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.widget-title label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.widget-title button {
+    background: @cc_button_bg;
+    border-radius: 500px;
+    min-width: 50px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.widget-title > button:hover {
+    background: alpha(@cc_button_bg, 0.8);
+    transition: all 200ms ease-in-out;
+}
+
+
+
+/* NOTIFICATIONS */
+.widget-notifications {
+    background-color: @cc_background;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 0px 0px 5px 5px;
+    padding: 0px 10px 10px 10px; 
+}
+

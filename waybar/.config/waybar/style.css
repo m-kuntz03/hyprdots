@@ -2,16 +2,16 @@
 @import "grayscale_expanded.css";
 
 * {
-  font-family: "MesloLGM Nerd Font Propo";
-  font-weight: bold;
-  font-size: 14px;
-  min-height: 0;
-  margin: 1px 2px 1px 2px;
+    font-family: "MesloLGM Nerd Font Propo";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+    margin: 1px 2px 1px 2px;
 }
 
 #waybar {
-  background: @background;
-  color: @text;
+    background: @background;
+    color: @text;
 }
 
 tooltip {

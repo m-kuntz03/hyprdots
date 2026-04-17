@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# checks if wifi device is enabled or not
+
+if iwctl device wlan0 show | grep -qi "Powered               on"; then
+    echo "true"
+else
+    echo "false"
+fi

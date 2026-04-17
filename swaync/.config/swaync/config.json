@@ -1,0 +1,96 @@
+{
+    "ignore-gtk-theme": "true",
+    "cssPriority": "user",
+  
+    "positionX": "center",
+    "positionY": "top",
+    "layer": "overlay",
+    "notification-window-width": 400,
+    "notification-window-height ": 200,
+    "timeout": 15,
+    "timeout-low": 15,
+    "timeout-critical": 0,
+    "notification-icon-size": 64,
+    "notification-body-image-height": 64,
+    "notification-body-image-width": 64,
+    "transition-time ": 0,
+    
+    
+    "fit-to-screen": false,
+    "image-visibility": "when-available",
+    "transition-time": 200,
+    "hide-on-clear": false,
+    "hide-on-action": false,
+    "control-center-positionX": "left",
+    "control-center-layer": "top",
+    "control-center-width": 400,
+    "control-center-height": 900,
+    "control-center-margin-top": 2,
+    "control-center-margin-left": 2,
+  
+    "widgets": [
+        "label",
+        "buttons-grid",
+        "backlight",
+        "volume",
+        "dnd",
+        "title", 
+        "notifications"
+    ],
+  
+    "widget-config": {
+        "label": {
+                "text": "MKArch Panel"
+        },
+        "title": {
+            "text": "Notifications",
+            "clear-all-button": true,
+            "button-text": "󰎟"
+        },
+        "dnd": {
+            "text": "Do Not Disturb"  
+        },
+        "mpris": {
+            "image-size": 100,
+            "image-radius": 5,
+            "show-player": "all",
+            "show-when-paused": true
+        },
+        "buttons-grid": {
+            "actions": [
+            {
+                "label": "󰐥",
+                "command": "~/MKArch/MKArch_wlogout"
+            },
+            {
+                "label": "󰖩",
+                "type": "toggle",
+                "command": "~/MKArch/MKArch_wifi_toggle",
+                "update-command": "~/MKArch/MKArch_wifi_check"
+            },
+            {
+                "label": "󰂯",
+                "type": "toggle",
+                "command": "~/MKArch/MKArch_bluetooth_toggle",
+                "update-command": "~/MKArch/MKArch_bluetooth_check"
+            },
+            {
+                "label": "",
+                "command": "nwg-look"
+            }
+            ]
+        },
+        "volume": {
+            "label": "󰕾",
+            "device": "default",
+            "slider": true,
+            "show-per-app": true,
+            "expand-button-label": "",
+            "collapse-button-label": ""
+        },
+        "backlight": {
+          "label": "",
+          "device": "amdgpu_bl1"
+        }
+    }
+  }
