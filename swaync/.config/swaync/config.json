@@ -63,6 +63,13 @@
                 "command": "~/MKArch/MKArch_wlogout"
             },
             {
+                "label": "󰕾",
+                "type": "toggle",
+                "active": false,
+                "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == false ]] && pactl set-sink-mute @DEFAULT_SINK@ 1 || pactl set-sink-mute @DEFAULT_SINK@ 0'",
+                "update-command": "sh -c '[[ $(pactl get-sink-mute @DEFAULT_SINK@) == *yes* ]] && echo false || echo true'"
+            },
+            {
                 "label": "󰖩",
                 "type": "toggle",
                 "command": "~/MKArch/MKArch_wifi_toggle",
@@ -75,8 +82,20 @@
                 "update-command": "~/MKArch/MKArch_bluetooth_check"
             },
             {
-                "label": "",
-                "command": "nwg-look"
+                "label": "󰴸",
+                "command": "swaync-client --close-panel && rofi -show p -modi p:$HOME/.config/rofi/rofi-sound-output-chooser"
+            },
+            {
+                "label": "",
+                "command": "swaync-client --close-panel && hyprpicker -a"
+            },
+            {
+                "label": "󰄀",
+                "command": "swaync-client --close-panel && hyprshot -m region -o ~/Pictures/screenshots"
+            },
+            {
+                "label": "󰕧",
+                "command": "swaync-client --close-panel && kooha"
             }
             ]
         },
