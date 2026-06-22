@@ -8,11 +8,11 @@ CONFIG_FILE="$HOME/.config/hypr/monitors.conf"
 
 if [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "mirror" ]; then
     cp "$EXTEND_FILE" "$CONFIG_FILE"
-    dunstify "Secondary Monitor" "Switched to Extend" -u low -i /home/mkuntz/.icons/candy-icons/preferences/scalable/preferences-desktop-display.svg
+    notify-send "Secondary Monitor" "Switched to Extend" -u low -t 2500 --icon=computer
     echo "extended" > "$STATE_FILE"
     pkill waybar && hyprctl dispatch exec waybar
 else
     cp "$MIRROR_FILE" "$CONFIG_FILE"
-    dunstify "Secondary Monitor" "Switched to Mirror" -u low -i /home/mkuntz/.icons/candy-icons/preferences/scalable/preferences-desktop-display.svg
+    notify-send "Secondary Monitor" "Switched to Mirror" -u low -t 2500 --icon=computer
     echo "mirror" > "$STATE_FILE"
 fi
