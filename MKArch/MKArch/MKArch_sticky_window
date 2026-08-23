@@ -2,12 +2,9 @@
 
 # Toggle to pop-out a tile to top right to stay fixed on a display basis.
 
-# Usage:
-# omarchy-hyprland-window-pop [width height [x y]]
-#
-# Arguments:
-#   width   Optional. Width of the floating window. Default: 1300
-#   height  Optional. Height of the floating window. Default: 900
+# Variables:
+#   width   Optional. Width of the floating window. 
+#   height  Optional. Height of the floating window.
 #
 # Behavior:
 #   - If the window is already pinned, it will be unpinned and removed from the pop layer.
@@ -19,22 +16,23 @@ height=${2:-420}
 active=$(hyprctl activewindow -j)
 pinned=$(echo "$active" | jq ".pinned")
 addr=$(echo "$active" | jq -r ".address")
+window="address:$addr"
+
 
 if [[ $pinned == "true" ]]; then
-  hyprctl -q --batch \
-    "dispatch pin address:$addr;" \
-    "dispatch togglefloating address:$addr;" \
-    "dispatch tagwindow -pop address:$addr;"
-elif [[ -n $addr ]]; then
-  hyprctl dispatch togglefloating address:$addr
-  hyprctl dispatch resizeactive exact $width $height address:$addr
+  
+  hyprctl dispatch "hl.dsp.window.pin({ action = 'toggle', window = '$window' })"
+  hyprctl dispatch "hl.dsp.window.float({ action = 'toggle', window = '$window' })"
+  hyprctl dispatch "hl.dsp.window.tag({ tag = 'pop', window = '$window' })"
 
-  hyprctl dispatch movewindow r address:$addr
-  hyprctl dispatch movewindow u address:$addr
+elif [[ -n  "$addr" ]]; then
+  hyprctl dispatch "hl.dsp.window.float({ action = 'toggle', window = '$window' })"
+  hyprctl dispatch "hl.dsp.window.resize({ x = $width, y = $height, window =  '$window' })"
 
+  hyprctl dispatch "hl.dsp.window.move({ direction = 'r', window = '$window' })" 
+  hyprctl dispatch "hl.dsp.window.move({ direction = 'u', window = '$window' })" 
 
-  hyprctl -q --batch \
-    "dispatch pin address:$addr;" \
-    "dispatch alterzorder top address:$addr;" \
-    "dispatch tagwindow +pop address:$addr;"
+  hyprctl dispatch "hl.dsp.window.pin({ action = 'toggle', window = '$window' })"
+  hyprctl dispatch "hl.dsp.window.alter_zorder({ mode = 'top', window = '$window' })"
+  hyprctl dispatch "hl.dsp.window.clear_tags({ window = '$window' })"
 fi

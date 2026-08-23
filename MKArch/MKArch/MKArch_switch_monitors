@@ -2,9 +2,9 @@
 
 STATE_FILE="$HOME/.config/hypr/monitor_switcher/state"
 
-EXTEND_FILE="$HOME/.config/hypr/monitor_switcher/monitors_extended.conf"
-MIRROR_FILE="$HOME/.config/hypr/monitor_switcher/monitors_mirror.conf"
-CONFIG_FILE="$HOME/.config/hypr/monitors.conf"
+EXTEND_FILE="$HOME/.config/hypr/monitor_switcher/monitors_extended.lua"
+MIRROR_FILE="$HOME/.config/hypr/monitor_switcher/monitors_mirror.lua"
+CONFIG_FILE="$HOME/.config/hypr/secondary_monitors.lua"
 
 if [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "mirror" ]; then
     cp "$EXTEND_FILE" "$CONFIG_FILE"
