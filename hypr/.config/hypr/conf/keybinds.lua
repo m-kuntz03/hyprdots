@@ -23,9 +23,9 @@ hl.bind(mainMod .. "+ V", hl.dsp.exec_cmd(editor), {description = "Opens Editor"
 hl.bind(mainMod .. "+ T", hl.dsp.exec_cmd(teams), {description = "Opens Teams"})
 hl.bind(mainMod .. "+ Z", hl.dsp.exec_cmd(zotero), {description = "Opens Zotero"})
 
-hl.bind(mainMod .. "+ CTRL + I", hl.dsp.exec_cmd(terminal .. "-e impala"), {description = "Opens Impala"})
-hl.bind(mainMod .. "+ CTRL + B", hl.dsp.exec_cmd(terminal .. "-e bluetui"), {description = "Opens BlueTUI"})
-hl.bind(mainMod .. "+ CTRL + T", hl.dsp.exec_cmd(terminal .. "-e btop"), {description = "Opens BTOP"})
+hl.bind(mainMod .. "+ CTRL + I", hl.dsp.exec_cmd(terminal .. " -e impala"), {description = "Opens Impala"})
+hl.bind(mainMod .. "+ CTRL + B", hl.dsp.exec_cmd(terminal .. " -e bluetui"), {description = "Opens BlueTUI"})
+hl.bind(mainMod .. "+ CTRL + T", hl.dsp.exec_cmd(terminal .. " -e btop"), {description = "Opens BTOP"})
 
 
 -- Navigation
