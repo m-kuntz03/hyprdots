@@ -32,7 +32,7 @@
             "(.*)LocalSend(.*)": " LocalSend",
             "(.*)Cisco Secure Client(.*)": "󱘖 Cisco Secure Client",
             "(.*)QFitsView(.*)": " QFitsView",
-            "(.*)Obsidian(.*)": " Obsidian",
+            "(.*)Obsidian(.*)": "\ue6bb Obsidian",
             "(.*)Mousepad(.*)": " Mousepad",
             "(.*)Thunar": "󰉋 Thunar"
         },

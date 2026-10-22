@@ -6,7 +6,7 @@ hl.bind(mainMod .. "+ CTRL + Q", hl.dsp.window.kill({"activewindow"}), {descript
 hl.bind(mainMod .. "+ SHIFT + X", hl.dsp.exec_cmd(scr_logout), {description = "Logout Menu"})
 hl.bind(mainMod .. "+ SHIFT + L", hl.dsp.exec_cmd("hyprlock"), {description = "Lock Screen"})
 -- hl.bind(mainMod .. "+ SHIFT + M", hl.dsp.exec_cmd(""), {description = "Switch Secondary Monitor Configuration"})
--- hl.bind(mainMod .. "+ SHIFT + C", hl.dsp.exec_cmd(""), {description = "Reloads all Configs"})
+hl.bind(mainMod .. "+ SHIFT + C", hl.dsp.exec_cmd("~/dotfiles/MKArch/MKArch/MKArch_reload_configs"), {description = "Reloads all Configs"})
 
 hl.bind(mainMod .. "+ C", hl.dsp.exec_cmd("hyprpicker -a"), {description = "Colour Picker"})
 hl.bind(mainMod .. "+ Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"), {description = "Screenshot to Clipboard"})
