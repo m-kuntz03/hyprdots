@@ -24,7 +24,7 @@
             "(.*)VSCodium": "󰈮 VSCodium",
             "(.*)kitty": "󰄛 Kitty",
             "(.*)Zotero": " Zotero",
-            "(.*)Microsoft Teams": "󰊻 Teams",
+            "(.*)Teams(.*)": "󰊻 Teams",
             "(.*)Waiting for(.*)": "󰊻 Teams",
             "(.*)Discord(.*)": " Discord",
             "(.*)Document Viewer(.*)": "󰈙 Document Viewer",
