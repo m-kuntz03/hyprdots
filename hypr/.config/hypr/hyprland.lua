@@ -6,6 +6,7 @@ browser = "firefox"
 editor = "codium"
 teams = "teams-for-linux"
 zotero = "zotero"
+obsidian = "obsidian"
 
 home = os.getenv( "HOME" )
 scr_logout = home .. "/MKArch/MKArch_wlogout"
